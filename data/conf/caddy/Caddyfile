@@ -1,1 +1,6 @@
-import vhosts/*
+files.alztalnet.de {
+  proxy / nginx-seafile:80 {
+    transparent
+  }
+  log stdout
+}
