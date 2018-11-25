@@ -1,0 +1,36 @@
+version: '2.4'
+
+services:
+
+  caddy:
+    image: abiosoft/caddy
+    volumes:
+      - ./data/conf/caddy/Caddyfile:/etc/Caddyfile
+      - ./data/caddy:/root/.caddy
+      - ./data/srv:/srv
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    networks:
+      proxy-network:
+
+  ipv6nat:
+    image: robbertkl/ipv6nat
+    privileged: true
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /lib/modules:/lib/modules:ro
+    restart: always
+
+networks:
+  proxy-network:
+    name: proxy-network
+    driver: bridge
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.99.1.0/24
+        - subnet: fd00:172:99:1::/64
