@@ -1,6 +1,29 @@
+##################################################################
+
 files.alztalnet.de {
   proxy / nginx-seafile:80 {
     transparent
   }
   log stdout
 }
+
+##################################################################
+
+portainer.vps-m-01.alztalnet.de {
+  proxy / portainer:9000 {
+    transparent
+  }
+  log stdout
+  header / {
+    -Server
+    Strict-Transport-Security "max-age=31536000;"
+    X-XSS-Protection "1; mode=block"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Expect-CT "max-age=0"
+    Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';"
+    Referrer-Policy "strict-origin"
+  }
+}
+
+##################################################################
