@@ -9,8 +9,10 @@ services:
       - ./data/caddy:/root/.caddy
       - ./data/srv:/srv
     ports:
-      - "80:80"
-      - "443:443"
+      - "5.1.92.175:80:80"
+      - "5.1.92.175443:443"
+      - "2a00:f820:417:2:51:92:17ed:ec24:80:80"
+      - "2a00:f820:417:2:51:92:17ed:ec24:443:443"
     restart: always
     networks:
       proxy-network:
