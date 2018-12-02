@@ -33,4 +33,4 @@ networks:
       driver: default
       config:
         - subnet: 172.99.1.0/24
-        - subnet: fd00:dead:beef::/48
+        - subnet: fd00:172:99:1::/64
