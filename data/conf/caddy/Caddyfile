@@ -38,7 +38,7 @@ musikwoche-baumburg.de {
 }
 
 www.musikwoche-baumburg.de {
-  root /srv/musikwoche-baumburg.de/public
+  root /srv/musikwoche-baumburg/public
   log stdout
   errors sterr
   gzip
