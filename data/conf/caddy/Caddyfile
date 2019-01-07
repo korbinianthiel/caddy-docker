@@ -27,3 +27,31 @@ portainer.vps-m-01.alztalnet.de {
 }
 
 ##################################################################
+
+musikwoche-baumburg.de {
+  redir {
+    if {host} not_starts_with www
+    / https://www.musikwoche-baumburg.de{uri}
+  }
+  log stdout
+  errors sterr
+}
+
+www.musikwoche-baumburg.de {
+  root /srv/musikwoche-baumburg.de/public
+  log stdout
+  errors sterr
+  gzip
+  header / {
+    -Server
+    Strict-Transport-Security "max-age=31536000;"
+    X-XSS-Protection "1; mode=block"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Expect-CT "max-age=0"
+    Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';"
+    Referrer-Policy "strict-origin"
+  }
+}
+
+##################################################################
