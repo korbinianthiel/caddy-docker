@@ -5,6 +5,7 @@ files.alztalnet.de {
     transparent
   }
   log stdout
+  errors sterr
 }
 
 ##################################################################
@@ -14,6 +15,7 @@ portainer.vps-m-01.alztalnet.de {
     transparent
   }
   log stdout
+  errors sterr
   header / {
     -Server
     Strict-Transport-Security "max-age=31536000;"
