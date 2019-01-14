@@ -57,3 +57,20 @@ www.musikwoche-baumburg.de {
 }
 
 ##################################################################
+
+musikfest-schnaitsee.de {
+  redir {
+    if {host} not_starts_with www
+    / https://www.musikfest-schnaitsee.de{uri}
+  }
+  log stdout
+  errors sterr
+}
+
+www.musikfest-schnaitsee.de {
+  redir www.musikverein-schnaitsee.de 307
+  log stdout
+  errors sterr
+}
+
+##################################################################
