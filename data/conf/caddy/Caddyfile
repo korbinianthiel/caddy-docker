@@ -68,7 +68,7 @@ musikfest-schnaitsee.de {
 }
 
 www.musikfest-schnaitsee.de {
-  redir www.musikverein-schnaitsee.de 307
+  redir https://www.musikverein-schnaitsee.de 307
   log stdout
   errors sterr
 }
