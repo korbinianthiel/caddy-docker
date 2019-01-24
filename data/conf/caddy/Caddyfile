@@ -6,6 +6,7 @@ files.alztalnet.de {
   }
   log stdout
   errors sterr
+  tls mail@alztalmail.de
 }
 
 ##################################################################
@@ -26,6 +27,7 @@ portainer.vps-m-01.alztalnet.de {
     Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';"
     Referrer-Policy "strict-origin"
   }
+  tls mail@alztalmail.de
 }
 
 ##################################################################
@@ -37,6 +39,7 @@ musikwoche-baumburg.de {
   }
   log stdout
   errors sterr
+  tls mail@alztalmail.de
 }
 
 www.musikwoche-baumburg.de {
@@ -54,6 +57,7 @@ www.musikwoche-baumburg.de {
     Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';"
     Referrer-Policy "strict-origin"
   }
+  tls mail@alztalmail.de
 }
 
 ##################################################################
@@ -65,12 +69,14 @@ musikfest-schnaitsee.de {
   }
   log stdout
   errors sterr
+  tls mail@alztalmail.de
 }
 
 www.musikfest-schnaitsee.de {
   redir / https://www.musikverein-schnaitsee.de 307
   log stdout
   errors sterr
+  tls mail@alztalmail.de
 }
 
 ##################################################################
