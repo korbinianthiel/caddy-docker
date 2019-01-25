@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   caddy:
-    image: abiosoft/caddy
+    image: abiosoft/caddy:0.11.1
     volumes:
       - ./data/conf/caddy/Caddyfile:/etc/Caddyfile
       - ./data/caddy:/root/.caddy
