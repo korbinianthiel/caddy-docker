@@ -3,7 +3,6 @@
 files.alztalnet.de {
   reverse_proxy nginx-seafile:80
   log stdout
-  errors sterr
 }
 
 ##################################################################
@@ -11,7 +10,6 @@ files.alztalnet.de {
 portainer.vps-m-01.alztalnet.de {
   reverse_proxy portainer:9000
   log stdout
-  errors sterr
   header / {
     -Server
     Strict-Transport-Security "max-age=31536000;"
@@ -29,14 +27,11 @@ portainer.vps-m-01.alztalnet.de {
 musikwoche-baumburg.de {
   redir https://www.musikwoche-baumburg.de{uri}
   log stdout
-  errors sterr
 }
 
 www.musikwoche-baumburg.de {
   root /srv/musikwoche-baumburg/public
   log stdout
-  errors sterr
-  gzip
   header / {
     -Server
     Strict-Transport-Security "max-age=31536000;"
@@ -54,13 +49,11 @@ www.musikwoche-baumburg.de {
 musikfest-schnaitsee.de {
   redir https://www.musikfest-schnaitsee.de{uri}
   log stdout
-  errors sterr
 }
 
 www.musikfest-schnaitsee.de {
   reverse_proxy nginx-wp-musikfest:80
   log stdout
-  errors sterr
 }
 
 ##################################################################
@@ -68,7 +61,6 @@ www.musikfest-schnaitsee.de {
 bestellen-bei-klauser.alztalnet.de {
   reverse_proxy nginx-wp-klauser:80
   log stdout
-  errors sterr
 }
 
 ##################################################################
