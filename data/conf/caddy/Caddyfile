@@ -1,9 +1,7 @@
 ##################################################################
 
 files.alztalnet.de {
-  proxy / nginx-seafile:80 {
-    transparent
-  }
+  reverse_proxy nginx-seafile:80
   log stdout
   errors sterr
 }
@@ -11,9 +9,7 @@ files.alztalnet.de {
 ##################################################################
 
 portainer.vps-m-01.alztalnet.de {
-  proxy / portainer:9000 {
-    transparent
-  }
+  reverse_proxy portainer:9000
   log stdout
   errors sterr
   header / {
@@ -31,10 +27,7 @@ portainer.vps-m-01.alztalnet.de {
 ##################################################################
 
 musikwoche-baumburg.de {
-  redir {
-    if {host} not_starts_with www
-    / https://www.musikwoche-baumburg.de{uri}
-  }
+  redir https://www.musikwoche-baumburg.de{uri}
   log stdout
   errors sterr
 }
@@ -59,18 +52,13 @@ www.musikwoche-baumburg.de {
 ##################################################################
 
 musikfest-schnaitsee.de {
-  redir {
-    if {host} not_starts_with www
-    / https://www.musikfest-schnaitsee.de{uri}
-  }
+  redir https://www.musikfest-schnaitsee.de{uri}
   log stdout
   errors sterr
 }
 
 www.musikfest-schnaitsee.de {
-  proxy / nginx-wp-musikfest:80 {
-    transparent
-  }
+  reverse_proxy nginx-wp-musikfest:80
   log stdout
   errors sterr
 }
