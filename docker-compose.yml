@@ -6,7 +6,7 @@ services:
     image: caddy
     volumes:
       - ./data/conf/caddy/Caddyfile:/etc/caddy/Caddyfile
-      - ./data/srv:/srv
+      - ./data/srv:/usr/share/caddy
       - caddy-data:/data
     ports:
       - "80:80"

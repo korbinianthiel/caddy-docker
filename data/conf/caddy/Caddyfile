@@ -30,7 +30,7 @@ musikwoche-baumburg.de {
 }
 
 www.musikwoche-baumburg.de {
-  root * /srv/musikwoche-baumburg/public
+  root * /usr/share/caddy/musikwoche-baumburg/public
   log stdout
   header / {
     -Server
