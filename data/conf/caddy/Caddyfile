@@ -64,3 +64,11 @@ www.musikfest-schnaitsee.de {
 }
 
 ##################################################################
+
+bestellen-bei-klauser.alztalnet.de {
+  reverse_proxy nginx-wp-klauser:80
+  log stdout
+  errors sterr
+}
+
+##################################################################
