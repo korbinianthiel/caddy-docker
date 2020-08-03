@@ -69,3 +69,19 @@ www.musikfest-schnaitsee.de {
 }
 
 ##################################################################
+
+musikverein-schnaitsee.de {
+  redir https://www.musikverein-schnaitsee.de{uri}
+  log {
+    output stdout
+  }
+}
+
+www.musikverein-schnaitsee.de {
+  reverse_proxy nginx-wp-musikverein:80
+  log {
+    output stdout
+  }
+}
+
+##################################################################
